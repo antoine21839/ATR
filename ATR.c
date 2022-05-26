@@ -49,7 +49,7 @@ void supprimer_dans_ATR(ATR *a, const char *mot){
         Fonction qui supprime dans l'ATR une chaîne de caractères mot.
     */
     ATR tmp;
-    if (*mot == '\0') {
+    if(*mot == '\0') {
         tmp = *a;
         *a = (*a)->fd;
         free(tmp);
@@ -68,7 +68,7 @@ void supprimer_dans_ATR(ATR *a, const char *mot){
     }
 }
 
-void parcours_ATR_aux(ATR a, char *buffer, int index, void (*action)(const char *mot)){
+static void parcours_ATR_aux(ATR a, char *buffer, int index, void (*action)(const char *mot)){
     /*
         Fonction auxiliaire de la fonction afficher_ATR.
     */
